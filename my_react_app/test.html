@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+        #app {
+            width: 500px;
+            height: 500px;
+            border-radius: 250px;
+            background-color: white;
+        }
+
+        .circle1 {
+            width: 0;
+            height: 0;
+            border-top: solid 200px red;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+
+        }
+
+        .circle2 {
+            width: 0;
+            height: 0;
+            border-top: solid 200px blue;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+
+        }
+
+        .circle3 {
+            width: 0;
+            height: 0;
+            border-top: solid 200px gold;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+
+        }
+
+        .circle4 {
+            width: 0;
+            height: 0;
+            border-top: solid 200px darkgray;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <li>
+        <div class="circle circle1"></div>
+    </li>
+    <li>
+        <div class="circle circle2"></div>
+    </li>
+    <li>
+        <div class="circle circle3"></div>
+    </li>
+    <li>
+        <div class="circle circle4"></div>
+    </li>
+</div>
+<script>
+    let app = document.getElementById('app');
+    let circle = document.getElementsByClassName('circle');
+    let deg = [90, 180, 270, 360];
+
+    let counter = 0;
+    app.onclick = function () {
+        let timer = setInterval(() => {
+            if (counter <= 3) {
+                circle[0].style.transform = 'rotate(' + deg[counter] + 'deg' + ')';
+                counter++;
+            } else {
+                counter = 0;
+            }
+
+        }, 10);
+    }
+</script>
+</body>
+</html>
